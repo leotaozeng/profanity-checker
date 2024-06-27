@@ -1,4 +1,5 @@
 from profanity_check import predict
+import os
 
 
 def read_file(path):
@@ -16,7 +17,7 @@ def check_profanity(content):
     return bool(predict([content])[0])
 
 
-file = "/Users/leozeng/Codecademy/Computer Science/profanity-checker/files/good.txt"
+file = os.getcwd() + "/files/good.txt"
 output = check_profanity(read_file(file))
 
 if output:
